@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Link to your external CSS file -->
+    <link id="client-theme" rel="stylesheet" type="text/css" href="styles-ltr.css">
+
+    <style>
+        .loader {
+            font-size: 10px;
+            width: 15em;
+            height: 15em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            text-align: center;
+            z-index: 0;
+            text-transform: uppercase;
+        }
+
+        .loader-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 1040;
+            background-color: #b3bdbca6;
+            transition: opacity .15s linear;
+        }
+
+        .loader img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translate(-50%);
+            width: 7.5em;
+        }
+
+        .loader h3 {
+            padding: 0;
+            line-height: 2;
+            font-size: 2.4em;
+        }
+
+        @keyframes mainLoader {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .loader:before,
+        .loader:after {
+            opacity: 0;
+            box-sizing: border-box;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 0 50px #fff, inset 0 0 50px #fff;
+        }
+
+        .loader:after {
+            z-index: 1;
+            animation: mainLoader 2s infinite 1s;
+        }
+
+        .loader:before {
+            z-index: 2;
+            animation: mainLoader 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-wrapper">
+        <div class="loader">
+            <img src="SASO_logo_7782856ee5-svg(1).svg" alt="Loader">
+        </div>
+    </div>
+</body>
+
+</html>
